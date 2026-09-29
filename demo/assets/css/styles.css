@@ -159,7 +159,7 @@ html {
 body {
   line-height: 1;
   padding: 0 !important;
-  font-family: "Instrument Sans", sans-serif;
+  font-family: 'Satoshi', sans-serif;
   color: var(--Black);
 }
 body::-webkit-scrollbar {
@@ -232,7 +232,7 @@ button,
 input,
 select,
 textarea {
-  font-family: "Instrument Sans", sans-serif;
+  font-family: 'Satoshi', sans-serif;
   font-size: 15px;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
@@ -584,7 +584,7 @@ h5,
 .h5,
 h6,
 .h6 {
-  font-family: "Instrument Sans", sans-serif;
+  font-family: 'Satoshi', sans-serif;
   margin: 0;
   text-rendering: optimizeLegibility;
   color: var(--Black);
@@ -2092,7 +2092,7 @@ a:focus, a:hover {
 /* sib-form */
 .sib-form {
   padding: 0;
-  font-family: "Instrument Sans", sans-serif !important;
+  font-family: 'Satoshi', sans-serif !important;
   box-sizing: border-box !important;
 }
 
@@ -5762,7 +5762,7 @@ form textarea {
   font-weight: 600;
   font-size: 64px;
   line-height: 72px;
-  font-family: "Instrument Sans", sans-serif;
+  font-family: 'Satoshi', sans-serif;
   min-width: 41px;
 }
 

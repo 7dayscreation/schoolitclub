@@ -284,13 +284,13 @@
     };
 
     const postProgress = () => {
-        if (!$(".post-reading-time__progress").length) return;
-        const $wrap = $(".post-reading-time__progress");
-        if (!$wrap.length) return;
+        const $progress = $(".post-reading-time__progress");
+        if (!$progress.length) return;
 
-        const path = $wrap.find(".progress-circle")[0];
-        const length = path.getTotalLength();
+        const path = $progress.find(".progress-circle")[0];
+        if (!path) return;
 
+        const length = path.getTotalLength ? path.getTotalLength() : 376.991;
         path.style.strokeDasharray = `${length} ${length}`;
         path.style.strokeDashoffset = length;
 
@@ -298,26 +298,40 @@
         if (!$section.length) return;
 
         const updateProgress = () => {
+            if (!$section.length || !$section.offset()) return;
             const sectionTop = $section.offset().top;
             const sectionHeight = $section.outerHeight();
             const scrollY = $(window).scrollTop();
+            const winHeight = $(window).height();
 
-            const scrollable = sectionHeight - $(window).height();
-            const scrollInSection = scrollY - sectionTop;
+            const startScroll = sectionTop - 120;
+            const endScroll = sectionTop + sectionHeight - winHeight;
+            const totalScrollable = endScroll - startScroll;
 
-            if (scrollY < sectionTop) {
+            if (totalScrollable <= 0) {
+                path.style.strokeDashoffset = 0;
+                return;
+            }
+
+            if (scrollY <= startScroll) {
                 path.style.strokeDashoffset = length;
-            } else if (scrollInSection > scrollable) {
+            } else if (scrollY >= endScroll) {
                 path.style.strokeDashoffset = 0;
             } else {
-                const progress = scrollInSection / scrollable;
-                path.style.strokeDashoffset = length - progress * length;
+                const progress = (scrollY - startScroll) / totalScrollable;
+                const clamped = Math.min(Math.max(progress, 0), 1);
+                path.style.strokeDashoffset = length - clamped * length;
             }
         };
 
         updateProgress();
-        $(window).on("scroll", updateProgress);
+        $(window).off("scroll.postProgress").on("scroll.postProgress", updateProgress);
+        $(window).off("resize.postProgress").on("resize.postProgress", updateProgress);
+        window.addEventListener("load", updateProgress);
+        window.addEventListener("schoolitclub:modulesLoaded", updateProgress);
     };
+    window.initPostProgress = postProgress;
+
 
     /* goTop
   -------------------------------------------------------------------------------------*/
@@ -326,20 +340,24 @@
         if (!$wrap.length) return;
 
         const path = $wrap.find("path")[0];
-        const length = path.getTotalLength();
+        if (!path) return;
+        const length = path.getTotalLength ? path.getTotalLength() : 307.919;
 
         path.style.strokeDasharray = `${length} ${length}`;
         path.style.strokeDashoffset = length;
 
         const updateProgress = () => {
             const scroll = $(window).scrollTop();
-            const height = $(document).height() - $(window).height();
-            path.style.strokeDashoffset = length - (scroll * length) / height;
+            const docH = $(document).height() - $(window).height();
+            if (docH > 0) {
+                path.style.strokeDashoffset = length - (scroll * length) / docH;
+            }
         };
 
         const checkVisibility = () => {
             const scroll = $(window).scrollTop();
-            const footerTop = $(".footer-go-top").offset().top;
+            const $footerGoTop = $(".footer-go-top");
+            const footerTop = ($footerGoTop.length && $footerGoTop.offset()) ? $footerGoTop.offset().top : $(document).height();
             const winHeight = $(window).height();
             const visible =
                 scroll > 200 && scroll + winHeight < footerTop - 350;
@@ -347,16 +365,17 @@
         };
 
         updateProgress();
-        $(window).on("scroll", () => {
+        $(window).off("scroll.goTop").on("scroll.goTop", () => {
             updateProgress();
             checkVisibility();
         });
 
-        $(".progress-wrap, .footer-go-top").on("click", function (e) {
+        $(".progress-wrap, .footer-go-top").off("click.goTop").on("click.goTop", function (e) {
             e.preventDefault();
-            $("html, body").animate({ scrollTop: 0 }, 0);
+            $("html, body").animate({ scrollTop: 0 }, 300);
         });
     };
+    window.initGoTop = goTop;
 
     /* scrollTabsX
   -------------------------------------------------------------------------------------*/
