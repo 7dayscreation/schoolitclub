@@ -1,0 +1,973 @@
+<!-- ============================================================
+     HEADER MODULE - modules/header.html
+     Include this module in every page using:
+     <div id="site-header"></div>
+     and load via modules-loader.js
+     ============================================================ -->
+
+<header class="header style-1 ">
+    <div class="tf-container">
+        <div class="header-inner ">
+            <div class="header-inner-wrap">
+                <div class="main-logo text-start">
+                    <a href="index.html" class="site-logo">
+                        <img src="assets/images/logo/logo.svg" alt="School IT Club logo">
+                    </a>
+                </div>
+                <nav class="main-menu hide-lg">
+                    <div class="header-city-dropdown d-none d-lg-flex align-items-center gap_8">
+                        <span class="city-label text-caption fw-6 text_black">Select Category</span>
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle header-city-btn" type="button" id="topicDropdown"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                AI Tools
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="topicDropdown">
+                                <li><a class="dropdown-item active" href="#" data-topic="AI Tools">AI Tools</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" data-topic="Coding & Web">Coding & Web</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" data-topic="Game Dev">Game Dev</a></li>
+                                <li><a class="dropdown-item" href="#" data-topic="Quizzes">Quizzes</a></li>
+                                <li><a class="dropdown-item" href="#" data-topic="Design">Design</a></li>
+                                <li><a class="dropdown-item" href="#" data-topic="Tech Experiments">Tech
+                                        Experiments</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div class="header-right">
+                    <!-- Direct Search Box -->
+                    <div class="popup-show-form">
+                        <a href=" #" class=" find btn-show ">
+                            <i class="icon-search-solid"></i>
+                            <span class="bg-effect"></span>
+                        </a>
+                        <div class="popup-show popup-form-search">
+                            <div class="close-form">
+                                <i class="icon-times-solid"></i>
+                            </div>
+                            <div class=" sub-heading fw-6 mb_12">What are You Looking For?</div>
+                            <form class="form-search d-flex gap_12 style-1" action="#">
+                                <fieldset class="text">
+                                    <input type="text" placeholder="Search..." class="" name="text" tabindex="0"
+                                        value="" aria-required="true" required="">
+                                </fieldset>
+                                <button class="tf-btn animate-hover-btn" type="submit">
+                                    <span>Search</span>
+                                </button>
+                            </form>
+                            <ul class="wrap-tag d-flex align-items-center flex-wrap gap_16">
+                                <li class="tag-item d-flex align-items-center gap_12">
+                                    <a href="#" class="text-caption text_black">Prompts</a>
+                                </li>
+                                <li class="tag-item d-flex align-items-center gap_12">
+                                    <a href="#" class="text-caption text_black">AI News</a>
+                                </li>
+                                <li class="tag-item d-flex align-items-center gap_12">
+                                    <a href="#" class="text-caption text_black">Games</a>
+                                </li>
+                                <li class="tag-item d-flex align-items-center gap_12">
+                                    <a href="#" class="text-caption text_black">UI/UX</a>
+                                </li>
+                                <li class="tag-item d-flex align-items-center gap_12">
+                                    <a href="#" class="text-caption text_black">Web Design</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- First Button: Find Architects -->
+                    <a href="#" class="tf-btn animate-hover-btn hide-lg" data-bs-toggle="offcanvas"
+                        data-bs-target="#filterSidebar">
+                        <span>Filters</span>
+                    </a>
+                    <!-- 2nd Button: Login / Join (Opens Auth Sidebar) -->
+                    <a href="#" class="tf-btn style-2 animate-hover-btn" data-bs-toggle="offcanvas"
+                        data-bs-target="#authSidebar" id="header-login-btn">
+                        <span>Login / Join</span>
+                    </a>
+
+                    <!-- Logged In User Profile Dropdown (Toggled dynamically on login) -->
+                    <div class="dropdown header-user-dropdown" id="header-user-dropdown" style="display: none;">
+                        <button class="btn d-flex align-items-center header-user-btn" type="button" id="userMenuBtn"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="user-avatar-wrap position-relative">
+                                <img src="assets/images/avatar/main-avatar.jpg" alt="Profile" class="header-user-avatar"
+                                    id="header-user-avatar">
+                                <span class="user-status-dot"></span>
+                            </div>
+                            <div class="text-start d-none d-xl-block">
+                                <span class="header-user-name fw-6 d-block" id="header-user-name">Pratham
+                                    M.</span>
+                                <span class="header-user-role text-caption text_mono-gray-5 d-block"
+                                    id="header-user-role">Student (Grade 10)</span>
+                            </div>
+                            <svg class="d-none d-xl-block header-user-chevron ms_4" width="12" height="12"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round" style="color: var(--Mono-gray-5);">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end user-menu-popup shadow-lg"
+                            aria-labelledby="userMenuBtn">
+                            <li class="user-popup-header">
+                                <div class="d-flex align-items-center gap_12">
+                                    <img src="assets/images/avatar/main-avatar.jpg" alt="Avatar" class="popup-avatar"
+                                        id="popup-avatar-img">
+                                    <div>
+                                        <div class="fw-7 text-body-2 text_black" id="popup-name">Pratham Mehta
+                                        </div>
+                                        <div class="text-caption text_mono-gray-5" id="popup-email">
+                                            pratham@school.edu</div>
+                                        <span class="badge mt_4" id="popup-role-badge"
+                                            style="background: #10b981; color: white; font-size: 10px; padding: 2px 8px; border-radius: 4px;">Student</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#profile"
+                                    onclick="alert('Profile view ready for Phase 2 dashboard.'); return false;">
+                                    <span class="item-icon-box">
+                                        <svg class="dropdown-icon" width="15" height="15" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                    </span>
+                                    <span>My Profile</span>
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#advance-filter-section">
+                                    <span class="item-icon-box">
+                                        <svg class="dropdown-icon" width="15" height="15" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                            <polyline points="2 17 12 22 22 17"></polyline>
+                                            <polyline points="2 12 12 17 22 12"></polyline>
+                                        </svg>
+                                    </span>
+                                    <span>My Projects &amp; Showcase</span>
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#advance-filter-section">
+                                    <span class="item-icon-box">
+                                        <svg class="dropdown-icon" width="15" height="15" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="9" cy="7" r="4"></circle>
+                                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                        </svg>
+                                    </span>
+                                    <span>Followed Mentors &amp; Ideas</span>
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#settings"
+                                    onclick="alert('Account Settings ready for Phase 2.'); return false;">
+                                    <span class="item-icon-box">
+                                        <svg class="dropdown-icon" width="15" height="15" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="3"></circle>
+                                            <path
+                                                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <span>Account Settings</span>
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item text-danger" href="#" id="header-logout-btn">
+                                    <span class="item-icon-box">
+                                        <svg class="dropdown-icon" width="15" height="15" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                            <polyline points="16 17 21 12 16 7"></polyline>
+                                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                                        </svg>
+                                    </span>
+                                    <span>Log Out</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Mobile Hamburger Button -->
+                    <div class="mobile-button" data-bs-toggle="offcanvas" data-bs-target="#menu-mobile"
+                        aria-controls="menu-mobile">
+                        <div class="burger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header> <!-- /header -->
+
+<!-- mobile-nav -->
+<div class="offcanvas offcanvas-start mobile-nav-wrap" tabindex="-1" id="menu-mobile" aria-labelledby="menu-mobile">
+    <div class="offcanvas-header top-nav-mobile">
+        <div class="offcanvas-title">
+            <a href="index.html" class="site-logo">
+                <img src="assets/images/logo/logo.svg" alt="School IT Club logo" style="max-height: 40px;">
+            </a>
+        </div>
+        <div data-bs-dismiss="offcanvas" class="btn-close">
+            <i class="icon-times-solid"></i>
+        </div>
+    </div>
+    <div class="offcanvas-body inner-mobile-nav">
+        <div class="mb-body">
+            <ul id="menu-mobile-menu">
+                <li class="menu-item current-menu-item">
+                    <a href="index.html" class="item-menu-mobile">Home</a>
+                </li>
+                <li class="menu-item menu-item-has-children-mobile">
+                    <a href="#dropdown-topics" class="item-menu-mobile collapsed" data-bs-toggle="collapse"
+                        aria-expanded="false" aria-controls="dropdown-topics">Explore Topics</a>
+                    <div id="dropdown-topics" class="collapse" data-bs-parent="#menu-mobile-menu">
+                        <ul class="sub-mobile">
+                            <li class="menu-item"><a href="#advance-filter-section" data-bs-dismiss="offcanvas">AI
+                                    Tools & Prompts</a></li>
+                            <li class="menu-item"><a href="#advance-filter-section" data-bs-dismiss="offcanvas">Coding &
+                                    Web Dev</a></li>
+                            <li class="menu-item"><a href="#advance-filter-section" data-bs-dismiss="offcanvas">Game
+                                    Dev & Play Zone</a></li>
+                            <li class="menu-item"><a href="#advance-filter-section" data-bs-dismiss="offcanvas">Weekly
+                                    Tech Quizzes</a></li>
+                            <li class="menu-item"><a href="#advance-filter-section" data-bs-dismiss="offcanvas">UI/UX
+                                    Design</a></li>
+                            <li class="menu-item"><a href="#advance-filter-section" data-bs-dismiss="offcanvas">Tech
+                                    Experiments</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu-item menu-item-has-children-mobile">
+                    <a href="#dropdown-community" class="item-menu-mobile collapsed" data-bs-toggle="collapse"
+                        aria-expanded="false" aria-controls="dropdown-community">Community & Mentors</a>
+                    <div id="dropdown-community" class="collapse" data-bs-parent="#menu-mobile-menu">
+                        <ul class="sub-mobile">
+                            <li class="menu-item"><a href="#advance-filter-section" data-bs-dismiss="offcanvas">Student
+                                    Showcase</a></li>
+                            <li class="menu-item"><a href="#advance-filter-section" data-bs-dismiss="offcanvas">Teacher
+                                    & Freelancer Mentors</a></li>
+                            <li class="menu-item"><a href="#advance-filter-section" data-bs-dismiss="offcanvas">Share
+                                    Ideas & Starter Code</a></li>
+                            <li class="menu-item"><a href="#advance-filter-section" data-bs-dismiss="offcanvas">School
+                                    IT Clubs Network</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu-item">
+                    <a href="about.html" class="item-menu-mobile">About Us</a>
+                </li>
+                <li class="menu-item">
+                    <a href="contact.html" class="item-menu-mobile">Contact</a>
+                </li>
+                <li class="menu-item">
+                    <a href="support.html" class="item-menu-mobile">Support</a>
+                </li>
+                <li class="menu-item menu-item-has-children-mobile">
+                    <a href="#dropdown-policies" class="item-menu-mobile collapsed" data-bs-toggle="collapse"
+                        aria-expanded="false" aria-controls="dropdown-policies">Our Terms &amp; Policy</a>
+                    <div id="dropdown-policies" class="collapse" data-bs-parent="#menu-mobile-menu">
+                        <ul class="sub-mobile">
+                            <li class="menu-item"><a href="parents-controls.html" data-bs-dismiss="offcanvas">Parents
+                                    Controls</a></li>
+                            <li class="menu-item"><a href="privacy-policy.html" data-bs-dismiss="offcanvas">Privacy
+                                    Policy</a></li>
+                            <li class="menu-item"><a href="terms.html" data-bs-dismiss="offcanvas">Terms &amp;
+                                    Conditions</a></li>
+                            <li class="menu-item"><a href="#" data-bs-toggle="modal"
+                                    data-bs-target="#cookiePreferencesModal" data-bs-dismiss="offcanvas">Cookies
+                                    Preference</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="support mt_24">
+                <div class="d-flex flex-column gap_10 mb_20">
+                    <a href="#advance-filter-section" class="tf-btn animate-hover-btn w-100 justify-content-center"
+                        data-bs-dismiss="offcanvas">
+                        <span>Explore Student Work</span>
+                    </a>
+                    <a href="#" class="tf-btn style-2 animate-hover-btn w-100 justify-content-center"
+                        data-bs-toggle="offcanvas" data-bs-target="#authSidebar" id="mobile-login-btn">
+                        <span>Student / Mentor Login</span>
+                    </a>
+                </div>
+                <span class="text-need d-block mb_8 fw-6">Need Support?</span>
+                <ul class="mb-info">
+                    <li>Email: <a href="mailto:info@schoolitclub.com">info@schoolitclub.com</a></li>
+                    <li>Global Network: <span class="number">schoolitclub.com</span></li>
+                    <li class="mt_12">
+                        <div class="wrap-social">
+                            <p class="mb_8">Connect with us:</p>
+                            <div class="tf-social d-flex align-items-center gap_16">
+                                <a href="https://instagram.com" target="_blank"><i class="icon-instagram ins"></i></a>
+                                <a href="https://twitter.com" target="_blank"><i class="icon-twitter-x x"></i></a>
+                                <a href="https://github.com" target="_blank"><i class="icon-github github"></i></a>
+                                <a href="https://facebook.com" target="_blank"><i class="icon-facebook-f fb"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div><!-- /mobile-nav -->
+
+<!-- Filter Sidebar (Redesigned with UI/UX Pro Max) -->
+<div class="offcanvas offcanvas-end filter-sidebar-wrap" tabindex="-1" id="filterSidebar"
+    aria-labelledby="filterSidebarLabel">
+    <!-- Sidebar Header -->
+    <div class="offcanvas-header sidebar-filter-header">
+        <div>
+            <div class="sidebar-filter-badge mb-1">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                </svg>
+                <span>Directory Filter</span>
+            </div>
+            <h5 class="offcanvas-title fw-7 sidebar-filter-title" id="filterSidebarLabel">
+                Advanced Filters
+                <span class="active-filters-count-pill" id="sidebar-active-count" style="display:none;">0</span>
+            </h5>
+            <p class="text-caption text_mono-gray-5 mb-0" style="font-size: 12.5px;">
+                Filter students, faculty mentors &amp; IT professionals
+            </p>
+        </div>
+        <button type="button" class="sidebar-close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Sidebar Body -->
+    <div class="offcanvas-body sidebar-filter-body">
+
+        <!-- 1. Role / Member Type (3-Card Segmented Layout) -->
+        <div class="sidebar-filter-section">
+            <div class="sidebar-section-header d-flex justify-content-between align-items-center mb_10">
+                <span class="sidebar-section-title">Member Role</span>
+                <span class="sidebar-section-hint">Select one</span>
+            </div>
+            <div class="sidebar-role-grid" id="filter-member-type">
+                <button type="button" class="sidebar-role-card active" data-value="Student">
+                    <div class="role-icon-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                        </svg>
+                    </div>
+                    <div class="role-card-info">
+                        <span class="role-card-name">Students</span>
+                        <span class="role-card-desc">Grades 6–12</span>
+                    </div>
+                    <div class="role-check-dot"></div>
+                </button>
+
+                <button type="button" class="sidebar-role-card" data-value="Teacher / Mentor">
+                    <div class="role-icon-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            <line x1="9" y1="7" x2="15" y2="7"></line>
+                            <line x1="9" y1="11" x2="13" y2="11"></line>
+                        </svg>
+                    </div>
+                    <div class="role-card-info">
+                        <span class="role-card-name">Mentors</span>
+                        <span class="role-card-desc">Faculty &amp; Trainers</span>
+                    </div>
+                    <div class="role-check-dot"></div>
+                </button>
+
+                <button type="button" class="sidebar-role-card" data-value="Professional">
+                    <div class="role-icon-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                    </div>
+                    <div class="role-card-info">
+                        <span class="role-card-name">Professionals</span>
+                        <span class="role-card-desc">Industry &amp; Alumni</span>
+                    </div>
+                    <div class="role-check-dot"></div>
+                </button>
+            </div>
+        </div>
+
+        <!-- 2. Grade Level (for Students) -->
+        <div class="sidebar-filter-section" id="sidebar-grade-section">
+            <div class="sidebar-section-header d-flex justify-content-between align-items-center mb_10">
+                <span class="sidebar-section-title">Grade Level</span>
+                <span class="sidebar-section-hint">School Class</span>
+            </div>
+            <div class="sidebar-grades-grid" id="filter-grade-level">
+                <button type="button" class="sidebar-chip filter-chip" data-value="Grade 6">Grade 6</button>
+                <button type="button" class="sidebar-chip filter-chip" data-value="Grade 7">Grade 7</button>
+                <button type="button" class="sidebar-chip filter-chip" data-value="Grade 8">Grade 8</button>
+                <button type="button" class="sidebar-chip filter-chip" data-value="Grade 9">Grade 9</button>
+                <button type="button" class="sidebar-chip filter-chip" data-value="Grade 10">Grade 10</button>
+                <button type="button" class="sidebar-chip filter-chip" data-value="Grade 11">Grade 11</button>
+                <button type="button" class="sidebar-chip filter-chip" data-value="Grade 12">Grade 12</button>
+            </div>
+        </div>
+
+        <!-- 3. Tech Domains & Skills (Multi-select) -->
+        <div class="sidebar-filter-section">
+            <div class="sidebar-section-header d-flex justify-content-between align-items-center mb_10">
+                <span class="sidebar-section-title">Skills &amp; Topics</span>
+                <span class="sidebar-section-hint">Multi-select</span>
+            </div>
+            <div class="sidebar-tags-wrap" id="filter-topic">
+                <button type="button" class="sidebar-chip filter-chip" data-value="AI Tools">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                    <span>AI Tools &amp; Prompts</span>
+                </button>
+                <button type="button" class="sidebar-chip filter-chip" data-value="Python">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                    <span>Python &amp; Coding</span>
+                </button>
+                <button type="button" class="sidebar-chip filter-chip" data-value="Web Dev">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                    </svg>
+                    <span>Web Development</span>
+                </button>
+                <button type="button" class="sidebar-chip filter-chip" data-value="UI/UX Design">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                        <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                    </svg>
+                    <span>UI/UX &amp; Figma</span>
+                </button>
+                <button type="button" class="sidebar-chip filter-chip" data-value="Game Dev">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                        <path d="M6 12h4m-2-2v4m10-2h.01m-4 0h.01"></path>
+                    </svg>
+                    <span>Game Dev &amp; Scratch</span>
+                </button>
+                <button type="button" class="sidebar-chip filter-chip" data-value="Robotics">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="10" rx="2"></rect>
+                        <circle cx="12" cy="5" r="2"></circle>
+                        <path d="M12 7v4"></path>
+                        <line x1="8" y1="16" x2="8" y2="16.01"></line>
+                        <line x1="16" y1="16" x2="16.01" y2="16"></line>
+                    </svg>
+                    <span>Robotics &amp; STEM</span>
+                </button>
+                <button type="button" class="sidebar-chip filter-chip" data-value="Java">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                    <span>Java &amp; App Dev</span>
+                </button>
+                <button type="button" class="sidebar-chip filter-chip" data-value="Tech Quizzes">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                    <span>Tech Quizzes</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 4. Experience Level (Interactive Radio List) -->
+        <div class="sidebar-filter-section">
+            <div class="sidebar-section-header d-flex justify-content-between align-items-center mb_10">
+                <span class="sidebar-section-title">Experience Level</span>
+                <span class="sidebar-section-hint">Select level</span>
+            </div>
+            <div class="sidebar-exp-list" id="filter-experience">
+                <button type="button" class="sidebar-exp-row filter-option-row" data-value="Beginner">
+                    <div class="exp-icon-pill exp-beginner">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <div class="exp-text-wrap">
+                        <div class="exp-row-title">Beginner Explorer</div>
+                        <div class="exp-row-sub">Just getting started &amp; learning concepts</div>
+                    </div>
+                    <div class="exp-radio-box"><div class="radio-inner"></div></div>
+                </button>
+
+                <button type="button" class="sidebar-exp-row filter-option-row" data-value="Intermediate">
+                    <div class="exp-icon-pill exp-intermediate">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                    </div>
+                    <div class="exp-text-wrap">
+                        <div class="exp-row-title">Intermediate Builder</div>
+                        <div class="exp-row-sub">Building working projects &amp; apps</div>
+                    </div>
+                    <div class="exp-radio-box"><div class="radio-inner"></div></div>
+                </button>
+
+                <button type="button" class="sidebar-exp-row filter-option-row" data-value="Advanced">
+                    <div class="exp-icon-pill exp-advanced">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+                            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+                            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+                            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+                        </svg>
+                    </div>
+                    <div class="exp-text-wrap">
+                        <div class="exp-row-title">Advanced Innovator</div>
+                        <div class="exp-row-sub">Hackathons &amp; competition ready</div>
+                    </div>
+                    <div class="exp-radio-box"><div class="radio-inner"></div></div>
+                </button>
+
+                <button type="button" class="sidebar-exp-row filter-option-row" data-value="Mentor Level">
+                    <div class="exp-icon-pill exp-mentor">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="7"></circle>
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                        </svg>
+                    </div>
+                    <div class="exp-text-wrap">
+                        <div class="exp-row-title">Mentor &amp; Faculty Lead</div>
+                        <div class="exp-row-sub">Guiding students &amp; club sessions</div>
+                    </div>
+                    <div class="exp-radio-box"><div class="radio-inner"></div></div>
+                </button>
+            </div>
+        </div>
+
+        <!-- 5. Location / Region Filter -->
+        <div class="sidebar-filter-section">
+            <div class="sidebar-section-header d-flex justify-content-between align-items-center mb_10">
+                <span class="sidebar-section-title">Region &amp; State</span>
+                <span class="sidebar-section-hint">Location</span>
+            </div>
+            <div class="sidebar-tags-wrap" id="filter-location">
+                <button type="button" class="sidebar-chip filter-chip" data-value="Gujarat">Gujarat</button>
+                <button type="button" class="sidebar-chip filter-chip" data-value="Maharashtra">Maharashtra</button>
+                <button type="button" class="sidebar-chip filter-chip" data-value="Delhi">Delhi</button>
+                <button type="button" class="sidebar-chip filter-chip" data-value="Karnataka">Karnataka</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Sidebar Footer -->
+    <div class="offcanvas-footer sidebar-filter-footer">
+        <button type="button" class="sidebar-reset-btn" id="btn-reset-filters">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                <path d="M3 3v5h5"></path>
+            </svg>
+            <span>Reset All</span>
+        </button>
+        <button type="button" class="sidebar-apply-btn" id="btn-apply-filters">
+            <span>Apply Filters</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<!-- Authentication Sidebar (Login & Register for Students and Mentors) -->
+<div class="offcanvas offcanvas-end auth-sidebar-wrap" tabindex="-1" id="authSidebar"
+    aria-labelledby="authSidebarLabel">
+    <div class="offcanvas-header" style="border-bottom: 1px solid var(--Mono-gray-2); padding: 18px 24px;">
+        <div>
+            <h5 class="offcanvas-title fw-7" id="authSidebarLabel" style="font-size: 19px;">School IT Club</h5>
+            <p class="text-caption text_mono-gray-5 mb-0" style="margin-top: 2px;">Global student & mentor community
+            </p>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body" style="padding: 24px;">
+        <!-- Mode Switcher: Sign In vs Create Account -->
+        <div class="auth-mode-tabs d-flex mb_20">
+            <button type="button" class="auth-mode-btn active" id="auth-tab-signin">Sign In</button>
+            <button type="button" class="auth-mode-btn" id="auth-tab-register">Create Account</button>
+        </div>
+
+        <!-- Role Selector Pills (Clean Text without Icons) -->
+        <div class="auth-role-selector mb_20">
+            <label class="text-caption fw-6 text_black mb_8 d-block">I am joining as:</label>
+            <div class="d-flex gap_8">
+                <button type="button" class="role-pill active" data-role="student">
+                    Student (Grades 6–12)
+                </button>
+                <button type="button" class="role-pill" data-role="mentor">
+                    Teacher / Mentor
+                </button>
+            </div>
+        </div>
+
+        <!-- 1. SIGN IN PANEL -->
+        <div id="auth-signin-panel" class="auth-form-panel">
+            <form id="signin-form">
+                <div class="form-group mb_16">
+                    <label class="text-caption fw-6 text_black mb_6 d-block">Email or Student Username</label>
+                    <input type="text" class="filter-input-field w-100"
+                        placeholder="e.g. pratham@school or name@school.edu" required>
+                </div>
+                <div class="form-group mb_12">
+                    <div class="d-flex justify-content-between align-items-center mb_6">
+                        <label class="text-caption fw-6 text_black mb-0">Password</label>
+                        <a href="#" class="text-caption text_mono-gray-5 hover-line-text"
+                            onclick="alert('Password reset link will be sent to your registered email.');">Forgot?</a>
+                    </div>
+                    <input type="password" class="filter-input-field w-100" placeholder="••••••••" required>
+                </div>
+                <label class="auth-custom-check-wrapper mb_20">
+                    <input class="auth-custom-check" type="checkbox" id="authRememberMe" checked>
+                    <span class="text-caption text_mono-gray-6">Keep me logged in</span>
+                </label>
+                <button type="submit" class="tf-btn animate-hover-btn w-100 justify-content-center mb_16"
+                    style="height: 44px;">
+                    <span>Sign In</span>
+                </button>
+            </form>
+            <div class="text-center pt_8">
+                <span class="text-caption text_mono-gray-5">New to School IT Club? </span>
+                <a href="#" class="text-caption fw-6 text_black hover-line-text" id="switch-to-register">Register
+                    here</a>
+            </div>
+        </div>
+
+        <!-- 2. REGISTER PANEL -->
+        <div id="auth-register-panel" class="auth-form-panel" style="display: none;">
+            <!-- Student Register Form with Age Validation -->
+            <form id="student-register-form" class="role-register-form">
+                <div class="row g-2 mb_14">
+                    <div class="col-6">
+                        <label class="text-caption fw-6 text_black mb_4 d-block">First Name</label>
+                        <input type="text" id="student-firstname" class="filter-input-field w-100"
+                            placeholder="First Name" required>
+                    </div>
+                    <div class="col-6">
+                        <label class="text-caption fw-6 text_black mb_4 d-block">Last Name Initial</label>
+                        <input type="text" id="student-lastname" class="filter-input-field w-100" placeholder="e.g. M."
+                            maxlength="3" required>
+                    </div>
+                </div>
+                <div class="row g-2 mb_14">
+                    <div class="col-6">
+                        <label class="text-caption fw-6 text_black mb_4 d-block">Student Age</label>
+                        <input type="number" id="student-age" class="filter-input-field w-100" placeholder="Age" min="8"
+                            max="25" value="14" required>
+                    </div>
+                    <div class="col-6">
+                        <label class="text-caption fw-6 text_black mb_4 d-block">Grade Level</label>
+                        <select id="student-grade" class="filter-input-field w-100" required>
+                            <option value="6">Grade 6</option>
+                            <option value="7">Grade 7</option>
+                            <option value="8">Grade 8</option>
+                            <option value="9" selected>Grade 9</option>
+                            <option value="10">Grade 10</option>
+                            <option value="11">Grade 11</option>
+                            <option value="12">Grade 12</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group mb_14">
+                    <label class="text-caption fw-6 text_black mb_4 d-block">School Name & City</label>
+                    <input type="text" id="student-school" class="filter-input-field w-100"
+                        placeholder="e.g. Delhi Public School, Ahmedabad" required>
+                </div>
+                <div class="form-group mb_14">
+                    <label class="text-caption fw-6 text_black mb_4 d-block">Student Email Address</label>
+                    <input type="email" id="student-email" class="filter-input-field w-100"
+                        placeholder="student@school.org or name@gmail.com" required>
+                </div>
+                <!-- Parent Email (Dynamically required for age < 18) -->
+                <div class="form-group mb_14" id="parent-email-wrap">
+                    <label class="text-caption fw-6 text_black mb_4 d-block" id="parent-email-label">
+                        Parent / Guardian Email <span class="text-danger" id="parent-star">*</span>
+                    </label>
+                    <input type="email" id="parent-email" class="filter-input-field w-100"
+                        placeholder="parent@gmail.com" required>
+                    <div id="parent-age-note" class="mt_6 p_8"
+                        style="background:#f0fdf4; border-radius:6px; font-size:11px; color:#15803d; line-height: 1.4;">
+                        Age Verification: Under 18 accounts require parental approval. The 1st time verification OTP
+                        will be sent to Parent's Email.
+                    </div>
+                </div>
+                <div class="form-group mb_16">
+                    <label class="text-caption fw-6 text_black mb_4 d-block">Create Password</label>
+                    <input type="password" id="student-password" class="filter-input-field w-100"
+                        placeholder="At least 8 characters" minlength="8" required>
+                </div>
+                <label class="auth-custom-check-wrapper mb_18">
+                    <input class="auth-custom-check" type="checkbox" id="studentConsent" required>
+                    <span class="text-caption text_mono-gray-6">I agree to the <a href="terms.html"
+                            class="text_black fw-6">Student Code of Conduct</a> & <a href="privacy-policy.html"
+                            class="text_black fw-6">Privacy Policy</a>.</span>
+                </label>
+                <button type="submit" class="tf-btn animate-hover-btn w-100 justify-content-center mb_16"
+                    style="height: 44px;">
+                    <span>Send Verification OTP</span>
+                </button>
+            </form>
+
+            <!-- Mentor Register Form (Expertise: Only Programming) -->
+            <form id="mentor-register-form" class="role-register-form" style="display: none;">
+                <div class="form-group mb_14">
+                    <label class="text-caption fw-6 text_black mb_4 d-block">Full Name & Title</label>
+                    <input type="text" id="mentor-fullname" class="filter-input-field w-100"
+                        placeholder="e.g. Prof. Rajesh Sharma or Jane Doe" required>
+                </div>
+                <div class="row g-2 mb_14">
+                    <div class="col-6">
+                        <label class="text-caption fw-6 text_black mb_4 d-block">Role Type</label>
+                        <select class="filter-input-field w-100" required>
+                            <option value="teacher">School Faculty / Teacher</option>
+                            <option value="freelancer">Tech Freelancer</option>
+                            <option value="industry">Industry Professional</option>
+                            <option value="alumni">Club Alumni / Lead</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label class="text-caption fw-6 text_black mb_4 d-block">Area of Expertise</label>
+                        <select class="filter-input-field w-100" id="mentor-expertise" required>
+                            <option value="UI/UX Design">UI/UX Design</option>
+                            <option value="Website Design">Website Design</option>
+                            <option value="Web Programming">Web Programming</option>
+                            <option value="Game Development">Game Development</option>
+                            <option value="AI Prompts">AI Prompts</option>
+                            <option value="AI Development">AI Development</option>
+                            <option value="All Programming" selected>All Programming (C, C++, Java, PHP, .NET,
+                                Python)</option>
+                            <option value="Mobile App Development">Mobile App Development</option>
+                            <option value="Robotics & IoT">Robotics & IoT</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group mb_14">
+                    <label class="text-caption fw-6 text_black mb_4 d-block">School / Organization / Studio</label>
+                    <input type="text" id="mentor-org" class="filter-input-field w-100"
+                        placeholder="e.g. St. Xavier's High School / Freelance Studio" required>
+                </div>
+                <div class="form-group mb_14">
+                    <label class="text-caption fw-6 text_black mb_4 d-block">Email Address</label>
+                    <input type="email" id="mentor-email" class="filter-input-field w-100"
+                        placeholder="teacher@school.edu or freelance@tech.com" required>
+                </div>
+                <div class="form-group mb_14">
+                    <label class="text-caption fw-6 text_black mb_4 d-block">GitHub / Portfolio URL
+                        (Optional)</label>
+                    <input type="url" id="mentor-portfolio" class="filter-input-field w-100"
+                        placeholder="https://github.com/yourhandle">
+                </div>
+                <div class="form-group mb_16">
+                    <label class="text-caption fw-6 text_black mb_4 d-block">Password</label>
+                    <input type="password" id="mentor-password" class="filter-input-field w-100"
+                        placeholder="At least 8 characters" minlength="8" required>
+                </div>
+                <label class="auth-custom-check-wrapper mb_18">
+                    <input class="auth-custom-check" type="checkbox" id="mentorConsent" required>
+                    <span class="text-caption text_mono-gray-6">I agree to adhere to the <a href="terms.html"
+                            class="text_black fw-6">Mentor Safety & Guidance Policy</a>.</span>
+                </label>
+                <button type="submit" class="tf-btn animate-hover-btn w-100 justify-content-center mb_16"
+                    style="height: 44px;">
+                    <span>Send Verification OTP</span>
+                </button>
+            </form>
+
+            <div class="text-center pt_8">
+                <span class="text-caption text_mono-gray-5">Already have an account? </span>
+                <a href="#" class="text-caption fw-6 text_black hover-line-text" id="switch-to-signin">Sign In
+                    here</a>
+            </div>
+        </div>
+
+        <!-- 3. OTP VERIFICATION PANEL -->
+        <div id="auth-otp-panel" class="auth-form-panel" style="display: none;">
+            <div class="text-center mb_20">
+                <div class="otp-icon-wrap mb_12"
+                    style="width: 52px; height: 52px; border-radius: 50%; background: #eff6ff; color: #2563eb; font-size: 24px; display: inline-flex; align-items: center; justify-content: center;">
+                    <i class="icon-envelope"></i>
+                </div>
+                <h6 class="fw-7 mb_6" style="font-size: 18px;">Email Verification Required</h6>
+                <p class="text-caption text_mono-gray-6" id="otp-destination-desc" style="line-height: 1.5;">
+                    We have sent a 6-digit OTP to verify your account to:
+                    <br><strong id="otp-sent-to-email" class="text_black" style="word-break: break-all;"></strong>
+                </p>
+            </div>
+
+            <form id="otp-verify-form">
+                <div class="otp-input-group mb_20">
+                    <input type="text" class="otp-box" maxlength="1" pattern="[0-9]" inputmode="numeric" required
+                        autofocus>
+                    <input type="text" class="otp-box" maxlength="1" pattern="[0-9]" inputmode="numeric" required>
+                    <input type="text" class="otp-box" maxlength="1" pattern="[0-9]" inputmode="numeric" required>
+                    <input type="text" class="otp-box" maxlength="1" pattern="[0-9]" inputmode="numeric" required>
+                    <input type="text" class="otp-box" maxlength="1" pattern="[0-9]" inputmode="numeric" required>
+                    <input type="text" class="otp-box" maxlength="1" pattern="[0-9]" inputmode="numeric" required>
+                </div>
+
+                <button type="submit" class="tf-btn animate-hover-btn w-100 justify-content-center mb_16"
+                    style="height: 44px;">
+                    <span>Verify OTP & Complete Registration</span>
+                </button>
+            </form>
+
+            <div class="text-center pt_4">
+                <p class="text-caption text_mono-gray-5 mb_6">Didn't receive code?</p>
+                <button type="button" id="btn-resend-otp" class="btn p-0 text-caption fw-6 text_black hover-line-text"
+                    style="background: transparent; border: none;">
+                    Resend OTP
+                </button>
+                <div class="mt_12">
+                    <a href="#" id="btn-otp-back" class="text-caption text_mono-gray-5 hover-line-text">← Back to
+                        edit registration</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. REGISTRATION SUCCESS PANEL -->
+        <div id="auth-success-panel" class="auth-form-panel"
+            style="display: none; text-align: center; padding: 20px 0;">
+            <div
+                style="width: 60px; height: 60px; border-radius: 50%; background: #ecfdf5; color: #059669; font-size: 28px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                ✓
+            </div>
+            <h5 class="fw-7 mb_8" style="font-size: 20px;">Registration Complete!</h5>
+            <p class="text-body-3 text_mono-gray-6 mb_20" id="success-role-desc">
+                Your email has been verified. Welcome to the global School IT Club community.
+            </p>
+            <div class="p_14 mb_24" style="background: var(--Mono-gray-1); border-radius: 10px; text-align: left;">
+                <div class="fw-6 text-caption text_black mb_4">Next Steps:</div>
+                <div class="text-caption text_mono-gray-6" style="font-size: 12px; line-height: 1.5;">
+                    • Browse verified student projects and games<br>
+                    • Follow programming mentors in C, Java, PHP, .NET, Python<br>
+                    • Submit your own IT club creations
+                </div>
+            </div>
+            <button type="button" class="tf-btn animate-hover-btn w-100 justify-content-center"
+                data-bs-dismiss="offcanvas" style="height: 44px;">
+                <span>Start Exploring Platform</span>
+            </button>
+        </div>
+    </div>
+    <div class="offcanvas-footer"
+        style="background: var(--Mono-gray-1); border-top: 1px solid var(--Mono-gray-2); padding: 14px 24px;">
+        <div class="d-flex align-items-center gap_8">
+            <span class="badge-status-live"
+                style="background: #10b981; width: 8px; height: 8px; border-radius: 50%; display: inline-block;"></span>
+            <span class="text-caption text_mono-gray-6" style="font-size: 11px;">Faculty-Mentored Safe Environment
+                for Grades 6–12</span>
+        </div>
+    </div>
+</div>
+
+<!-- Cookie Preferences Modal -->
+<div class="modal fade" id="cookiePreferencesModal" tabindex="-1" aria-labelledby="cookieModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="border-radius: 16px; border: 1px solid var(--Mono-gray-2); padding: 8px;">
+            <div class="modal-header" style="border-bottom: 1px solid var(--Mono-gray-2); padding: 16px 20px;">
+                <div>
+                    <h5 class="modal-title fw-6" id="cookieModalLabel" style="font-size: 18px;">Cookie & Privacy
+                        Preferences</h5>
+                    <p class="text-caption text_mono-gray-5 mt_4">Safe, privacy-first controls for students and
+                        parents.</p>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="padding: 20px;">
+                <p class="text-body-3 text_mono-gray-6 mb_16">
+                    School IT Club adheres to strict student data privacy standards (including COPPA/GDPR-K
+                    guidelines). We never sell student data or track across third-party networks.
+                </p>
+                <div class="cookie-option d-flex justify-content-between align-items-center mb_16 p_12"
+                    style="background: var(--Mono-gray-1); border-radius: 8px;">
+                    <div>
+                        <div class="fw-6 text-body-2 text_black">Essential Cookies</div>
+                        <div class="text-caption text_mono-gray-5">Required for core site security, navigation, and
+                            login.</div>
+                    </div>
+                    <span class="badge"
+                        style="background: var(--Black); color: var(--White); font-size: 11px; padding: 4px 8px; border-radius: 6px;">Always
+                        Active</span>
+                </div>
+                <div class="cookie-option d-flex justify-content-between align-items-center mb_16 p_12"
+                    style="background: var(--Mono-gray-1); border-radius: 8px;">
+                    <div>
+                        <div class="fw-6 text-body-2 text_black">Anonymous Analytics</div>
+                        <div class="text-caption text_mono-gray-5">Helps us measure quiz participation and platform
+                            traffic anonymously.</div>
+                    </div>
+                    <div class="form-check form-switch mb-0">
+                        <input class="form-check-input" type="checkbox" id="analyticsCookies" checked
+                            style="cursor: pointer;">
+                    </div>
+                </div>
+                <div class="cookie-option d-flex justify-content-between align-items-center p_12"
+                    style="background: var(--Mono-gray-1); border-radius: 8px;">
+                    <div>
+                        <div class="fw-6 text-body-2 text_black">Learning Experience Preferences</div>
+                        <div class="text-caption text_mono-gray-5">Remembers code theme preferences and quiz sound
+                            effects.</div>
+                    </div>
+                    <div class="form-check form-switch mb-0">
+                        <input class="form-check-input" type="checkbox" id="prefCookies" checked
+                            style="cursor: pointer;">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-between"
+                style="border-top: 1px solid var(--Mono-gray-2); padding: 16px 20px;">
+                <button type="button" class="tf-btn style-2" data-bs-dismiss="modal"
+                    style="height: 38px; padding: 0 16px; font-size: 13px;">
+                    <span>Reject Non-Essential</span>
+                </button>
+                <button type="button" class="tf-btn animate-hover-btn" data-bs-dismiss="modal"
+                    style="height: 38px; padding: 0 20px; font-size: 13px;">
+                    <span>Save Preferences</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

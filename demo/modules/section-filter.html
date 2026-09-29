@@ -1,0 +1,80 @@
+<!-- =========================================================================
+     School IT Club - Section Filter Module
+     Extracted from index.html for reusability across pages.
+     Loaded dynamically via modules-loader.js into #section-filter
+     ========================================================================= -->
+<div class="section tf-spacing-4">
+    <div class="tf-container">
+        <div id="advance-filter-section">
+            <div class="heading-section text-center mb_48">
+                <div class="sub-heading fw-6 text-uppercase letter-spacing-1 text_mono-gray-5 mb_12">World Wide Network</div>
+                <h2 class="title fw-7">Find Students, Teachers &amp; Professionals</h2>
+                <p class="text-body-2 text_mono-gray-5 mt_12">Search verified students, teachers &amp; IT professionals by name, city, state, or area of expertise.</p>
+            </div>
+
+            <!-- Full Width Filter Card -->
+            <div class="search-filter-card mb_48">
+                <!-- Type Tabs: 3 roles on the site -->
+                <div class="filter-type-tabs d-flex mb_32" id="filter-type-tabs">
+                    <button type="button" class="type-tab active" data-type="student">Students</button>
+                    <button type="button" class="type-tab" data-type="teacher">Teachers / Mentors</button>
+                    <button type="button" class="type-tab" data-type="professional">Professionals</button>
+                </div>
+
+                <!-- Keywords full width input -->
+                <div class="form-group mb_24">
+                    <input type="text" id="adv-search-input" class="filter-input-field"
+                        placeholder="Search by name, skill or topic (e.g. Python, AI, Web Design)">
+                </div>
+
+                <!-- Tri-column inputs: Country, State, City -->
+                <div class="row mb_32">
+                    <div class="col-md-4 mb_16 mb-md-0">
+                        <select id="adv-country-select" class="filter-input-field">
+                            <option value="all">Country</option>
+                            <option value="India">India</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb_16 mb-md-0">
+                        <select id="adv-state-select" class="filter-input-field">
+                            <option value="all">State</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Delhi">Delhi</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <select id="adv-city-select" class="filter-input-field">
+                            <option value="all">City</option>
+                            <option value="Ahmedabad">Ahmedabad</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Surat">Surat</option>
+                            <option value="Vadodara">Vadodara</option>
+                            <option value="Delhi">Delhi</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Bottom Action Buttons: aligned right -->
+                <div class="d-flex justify-content-end gap_16">
+                    <button type="button" id="adv-btn-reset" class="adv-pill-btn btn-reset">Reset</button>
+                    <button type="button" id="adv-btn-search"
+                        class="adv-pill-btn btn-search">Search</button>
+                </div>
+            </div>
+
+            <!-- Results Section (Hidden by default, shown on search click) -->
+            <div id="adv-results-wrapper" style="display: none; margin-top: 40px;">
+                <div class="search-results-header d-flex justify-content-between align-items-center mb_24">
+                    <span class="results-count-text text-body-2 fw-5" id="adv-results-count">Showing 0
+                        results</span>
+                    <span class="badge-status-live"><span class="dot"></span> Live Directory</span>
+                </div>
+
+                <div class="row animate-grid" id="adv-results-grid">
+                    <!-- Live generated cards will render here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
